@@ -1,352 +1,497 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
-    <title>Curriculum vitae</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angel Geovanny Ordón Colchaj - Curriculum Vitae</title>
     <link rel="icon" type="image/png" sizes="32x32" href="rocket.ico">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <!-- Bulma Version 0.9.0-->
-    <link rel='stylesheet' href='https://unpkg.com/bulma@0.9.0/css/bulma.min.css'>
-    <link rel='stylesheet'
-        href='https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.9.1/css/OverlayScrollbars.min.css'>
-    <link rel='stylesheet' href='https://kingsora.github.io/OverlayScrollbars/etc/os-theme-thin-dark.css'>
-    <link rel='stylesheet' href="./css/prism.css">
-    <link rel="stylesheet" href="./css/cheatsheet.css">
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/prism.min.css"> -->
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/cheatsheet.min.css"> -->
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"> -->
-    <script src="https://kit.fontawesome.com/7dc3015a44.js" crossorigin="anonymous"></script>
+    
+    <!-- Bootstrap 5.3.x -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+          integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #64748b;
+            --accent-color: #f8fafc;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --border-color: #e2e8f0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: #ffffff;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #1d4ed8 100%);
+            color: white;
+            padding: 4rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="1" fill="white" opacity="0.1"/><circle cx="10" cy="60" r="1" fill="white" opacity="0.1"/><circle cx="90" cy="40" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>') repeat;
+            pointer-events: none;
+        }
+        
+        .profile-img {
+            border-radius: 50%;
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border: 4px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .profile-img:hover {
+            transform: scale(1.05);
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 0.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: #fbbf24;
+            transform: translateY(-2px);
+        }
+        
+        .section-title {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 3rem;
+            height: 3px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+        
+        .card {
+            border: none;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        .skill-badge {
+            background: var(--accent-color);
+            color: var(--text-primary);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.875rem;
+            margin: 0.25rem;
+            display: inline-block;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+        
+        .skill-badge:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-1px);
+        }
+        
+        .interest-tag {
+            background: linear-gradient(135deg, var(--primary-color), #3b82f6);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin: 0.2rem;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        
+        .interest-tag:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3);
+        }
+        
+        .timeline-item {
+            border-left: 3px solid var(--primary-color);
+            padding-left: 1.5rem;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -7px;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--primary-color);
+        }
+        
+        .sidebar {
+            background: var(--accent-color);
+            padding: 2rem;
+            border-radius: 15px;
+            height: fit-content;
+            position: sticky;
+            top: 2rem;
+        }
+        
+        .main-content {
+            padding: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 2rem 0;
+            }
+            
+            .profile-img {
+                width: 140px;
+                height: 140px;
+            }
+            
+            .sidebar {
+                margin-bottom: 2rem;
+                position: static;
+            }
+            
+            .main-content {
+                padding: 1rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <section class="hero is-primary">
-        <div class="hero-body">
-            <div class="columns">
-                <div class="column is-12">
-                    <div class="container content">
-                        <!-- <i class="is-large fab fa-discord"></i>
-                        <i class="is-large fas fa-code"></i> -->
-                        <div class="columns">
-                            <div class="column is-2">
-                                <figure class="image is-128x128">
-                                    <img style="border-radius: 15px;" src="foto.png">
-                                </figure>
-                            </div>
-                            <div class="column is-8">
-                                <h1 class="title">Angel Ordón</h1>
-                                <h3 class="subtitle">
-                                    <i class="fas fa-check"></i>
-                                    Junior Developer
-                                </h3>
-                                <h4><em>Ciudad de Guatemala, Guatemala</em></h4>
-                                
-                                <a href="https://www.linkedin.com/in/aordon/" target="_blank">
-                                    <span class="icon">
-                                        <i class="fab fa-linkedin"></i>
-                                    </span>
-                                </a>
-                                <a href="https://github.com/AngelOrdon02" target="_blank">
-                                    <span class="icon">
-                                        <i class="fab fa-github"></i>
-                                    </span>
-                                </a>
-                                <a href="https://twitter.com/angelordon24" target="_blank">
-                                    <span class="icon">
-                                        <i class="fab fa-twitter"></i>
-                                    </span>
-                                </a>
-                                <a href="https://www.instagram.com/angel.goc/" target="_blank">
-                                    <span class="icon">
-                                        <i class="fab fa-instagram"></i>
-                                    </span>
-                                </a>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="section">
+    <!-- Hero Section -->
+    <section class="hero-section">
         <div class="container">
-            <div class="columns">
-                <div class="column is-3">
-                    <aside class="is-medium menu">
-                        <p class="menu-label">
-                            Acerca de mi
-                        </p>
-                        <p>Hola, soy entusiasta de aprender cosas nuevas, me encanta ver documentales, desde historia hasta tecnología. Me encantan los deportes y los paisajes. Disfruto mucho convivir con mi familia.</p>
-                        <p class="menu-label">
-                            Soft Skills
-                        </p>
-                        <ul class="menu-list">
-                            <!-- <li class="is-right"><a href="#const" class="is-active"><i class="fab fa-css3-alt"></i>
-                                    CSS</a></li> -->
-                            <!-- <li><a href="#let" class="button is-outlined"><i class="fab fa-js"></i> Creatividad</a></li> -->
-                            <li><i class="fa fa-star"></i> Creatividad</li>
-                            <li><i class="fa fa-star"></i> Pensamiento crítico</li>
-                            <li><i class="fa fa-star"></i> Liderazgo</li>
-                            <li><i class="fa fa-star"></i> Flexibilidad</li>
-                            <!-- <li><a href="#let" class="is-active"><i class="fab fa-html5"></i> HTML</a></li> -->
-                        </ul>
-                        <p class="menu-label">
-                            Intereses
-                        </p>
-                        <ul class="menu-list">
-                            <li><span class="tag is-white is-medium">Música</span></li>
-                            <li><span class="tag is-white is-medium">Viajar</span></li>
-                            <li><span class="tag is-white is-medium">Sci-fi</span></li>
-                            <li><span class="tag is-white is-medium">Natación</span></li>
-                            <li><span class="tag is-white is-medium">Películas</span></li>
-                            <li><span class="tag is-white is-medium">Videojuegos</span></li>
-                            <li><span class="tag is-white is-medium">Senderismo</span></li>
-                        </ul>
-                    </aside>
+            <div class="row align-items-center">
+                <div class="col-lg-4 col-md-5 text-center mb-4 mb-md-0">
+                    <img src="foto.png" alt="Angel Geovanny Ordón Colchaj" class="profile-img">
                 </div>
-                <div class="column is-9">
-                    <div class="content is-medium">
-                        <h3 class="title is-3">Educación</h3>
-                        <div class="box">
-                            <!-- <h4 id="const" class="title is-4">Universidad de San Carlos de Guatemala</h4> -->
-                            <article class="message is-dark">
-                                <span class="icon has-text-primary">
-                                    <!-- <i class="fa fa-graduation-cap"></i> -->
-                                    <!-- <i class="fas fa-school"></i> -->
-                                </span>
-                                <div class="message-body">
-                                    <h5>Universidad de San Carlos de Guatemala</h5>
-                                    Ingeniería en Ciencias y Sistemas <em>(2019-)</em>
-                                </div>
-                            </article>
-
-                            <!-- <h4 id="const" class="title is-4">Fundación Kinal</h4> -->
-                            <article class="message is-dark">
-                                <span class="icon has-text-primary">
-                                    <!-- <i class="fab fa-js"></i> -->
-                                    <!-- <i class="fas fa-graduation-cap"> -->
-                                </span>
-                                <div class="message-body">
-                                    <h5>Fundación Kinal</h5>
-                                    Perito en Computación, Informática <em>(2016-2018)</em>
-                                </div>
-                            </article>
-                        </div>
-
-                        <h3 class="title is-3">Habilidades</h3>
-                        <div class="box">
-                            <h4 id="const" class="title is-4">Intermedio</h4>
-                            <article class="message is-dark">
-                                <div class="message-body">
-                                    <ul class="menu-list">
-                                        <li>Java</li>
-                                        <li>JavaScript, HTML5, CSS3, XML</li>
-                                        <li>PHP</li>
-                                        <li>Python</li>
-                                        <li>Bases de datos relacionales y no relacionales</li>
-                                        <li>Angular</li>
-                                        <li>Laravel</li>
-                                        <li>Flask</li>
-                                        <li>Frameworks de diseño web</li>
-                                        <li>GIT</li>
-                                        <li>Linux</li>
-                                        <li>Arquitectura de software MVC</li>
-                                    </ul>
-                                </div>
-                            </article>
-
-                            <h4 id="const" class="title is-4">Principiante</h4>
-                            <article class="message is-dark">
-                                <div class="message-body">
-                                    <ul class="menu-list">
-                                        <li>Ionic</li>
-                                        <li>ASP.NET</li>
-                                        <li>Protocolos de red</li>
-                                        <li>Docker</li>
-                                        <li>WordPress</li>
-                                        <li>Arquitectura de software MVVM</li>
-                                    </ul>
-                                </div>
-                            </article>
-                        </div>
-                        <!-- <div class="box">
-                            <h4 id="lorem" class="title is-4">More to come...</h4>
-                            <article class="message is-primary">
-                                <span class="icon has-text-primary">
-                                    <i class="fas fa-info-circle"></i>
-                                </span>
-                                <div class="message-body">
-                                    Lorem ipsum dolor sit amet, mea ne viderer veritus menandri, id scaevola gloriatur
-                                    instructior sit.
-                                </div>
-                            </article>
-                            <pre><code class="language-javascript">let i = 0;</code></pre>
-                        </div> -->
+                <div class="col-lg-8 col-md-7">
+                    <h1 class="display-4 fw-bold mb-2">Angel Ordón</h1>
+                    <h3 class="fs-4 mb-2">
+                        <i class="fas fa-code me-2"></i>
+                        Desarrollador Full Stack Junior
+                    </h3>
+                    <p class="fs-5 mb-2">
+                        <i class="fas fa-map-marker-alt me-2"></i>
+                        Ciudad de Guatemala, Guatemala
+                    </p>
+                    <p class="fs-6 mb-3">
+                        <i class="fas fa-envelope me-2"></i>
+                        angelordon01@gmail.com
+                        <span class="mx-3">|</span>
+                        <i class="fas fa-phone me-2"></i>
+                        +502 4741-0132
+                    </p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/aordon/" target="_blank" title="LinkedIn">
+                            <i class="fab fa-linkedin" target="_blank"></i>
+                        </a>
+                        <a href="https://github.com/AngelOrdon02" target="_blank" title="GitHub">
+                            <i class="fab fa-github" target="_blank"></i>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <footer class="footer">
-        <!-- <section class="section">
-            <div class="container">
-                <div class="columns is-multiline">
-                    <div class="column is-one-third">
-                        <article class="notification media has-background-white">
-                            <figure class="media-left">
-                                <span class="icon">
-                                    <i class="has-text-warning fas fa-columns fa-lg"></i>
-                                    <i class="fa fa-js"></i>
-                                </span>
-                            </figure>
-                            <div class="media-content">
-                                <div class="content">
-                                    <h1 class="title is-size-4">Columns</h1>
-                                    <p class="is-size-5 subtitle">
-                                        The power of <strong>Flexbox</strong> in a simple interface
-                                    </p>
-                                </div>
-                            </div>
-                        </article>
+
+    <!-- Main Content -->
+    <div class="container my-5">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-lg-4 col-md-5 mb-4">
+                <div class="sidebar">
+                    <!-- About Me -->
+                    <div class="mb-4">
+                        <h4 class="section-title">Acerca de mí</h4>
+                        <p class="text-muted">
+                            Estudiante de Ingeniería en Ciencias y Sistemas con pasión por el desarrollo de software 
+                            y tecnologías emergentes. Me especializo en desarrollo web full-stack con experiencia 
+                            en múltiples lenguajes de programación y frameworks modernos. 
+                        </p>
+                        <p class="text-muted">
+                            Entusiasta del aprendizaje continuo, disfruto mantenerme actualizado con las últimas 
+                            tendencias tecnológicas. En mi tiempo libre me gusta practicar deportes, viajar y 
+                            pasar tiempo de calidad con mi familia.
+                        </p>
                     </div>
-                    <div class="column is-one-third">
-                        <article class="notification has-background-white media">
-                            <figure class="media-left">
-                                <span class="icon has-text-info">
-                                    <i class="fab fa-lg fa-wpforms"></i>
-                                </span>
-                            </figure>
-                            <div class="media-content">
-                                <div class="content">
-                                    <h1 class="title is-size-4">Form</h1>
-                                    <p class="is-size-5 subtitle">
-                                        The indispensable <strong>form controls</strong>, designed for maximum clarity
-                                    </p>
-                                </div>
-                            </div>
-                        </article>
+
+                    <!-- Objective -->
+                    <div class="mb-4">
+                        <h4 class="section-title">Objetivo Profesional</h4>
+                        <p class="text-muted">
+                            Busco oportunidades para aplicar mis conocimientos en desarrollo de software en un 
+                            entorno profesional dinámico, donde pueda contribuir a proyectos innovadores mientras 
+                            continúo creciendo como desarrollador full-stack.
+                        </p>
                     </div>
-                    <div class="column is-one-third">
-                        <article class="notification has-background-white media">
-                            <figure class="media-left">
-                                <span class="icon has-text-danger">
-                                    <i class="fas fa-lg fa-cubes"></i>
-                                </span>
-                            </figure>
-                            <div class="media-content">
-                                <div class="content">
-                                    <h1 class="title is-size-4">Components</h1>
-                                    <p class="is-size-5 subtitle">
-                                        Advanced multi-part components with lots of possibilities
-                                    </p>
-                                </div>
-                            </div>
-                        </article>
+
+                    <!-- Soft Skills -->
+                    <div class="mb-4">
+                        <h4 class="section-title">Soft Skills</h4>
+                        <div class="d-flex flex-column gap-2">
+                            <div><i class="fas fa-star text-warning me-2"></i>Creatividad</div>
+                            <div><i class="fas fa-star text-warning me-2"></i>Pensamiento crítico</div>
+                            <div><i class="fas fa-star text-warning me-2"></i>Liderazgo</div>
+                            <div><i class="fas fa-star text-warning me-2"></i>Flexibilidad</div>
+                        </div>
                     </div>
-                    <div class="column is-one-third">
-                        <article class="notification has-background-white media">
-                            <figure class="media-left">
-                                <span class="icon has-text-grey">
-                                    <i class="fas fa-lg fa-cogs"></i>
-                                </span>
-                            </figure>
-                            <div class="media-content">
-                                <div class="content">
-                                    <h1 class="title is-size-4">Modifiers</h1>
-                                    <p class="is-size-5 subtitle">
-                                        An <strong>easy-to-read</strong> naming system designed for humans
-                                    </p>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="column is-one-third">
-                        <article class="notification has-background-white media">
-                            <figure class="media-left">
-                                <span class="icon has-text-primary">
-                                    <i class="fas fa-lg fa-warehouse"></i>
-                                </span>
-                            </figure>
-                            <div class="media-content">
-                                <div class="content">
-                                    <h1 class="title is-size-4">Layout</h1>
-                                    <p class="is-size-5 subtitle">
-                                        Design the <strong>structure</strong> of your webpage with these CSS classes
-                                    </p>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="column is-one-third">
-                        <article class="notification has-background-white media">
-                            <figure class="media-left">
-                                <span class="icon has-text-danger">
-                                    <i class="fas fa-lg fa-cube"></i>
-                                </span>
-                            </figure>
-                            <div class="media-content">
-                                <div class="content">
-                                    <h1 class="title is-size-4">Elements</h1>
-                                    <p class="is-size-5 subtitle">
-                                        Essential interface elements that only require a <strong>single CSS
-                                            class</strong>
-                                    </p>
-                                </div>
-                            </div>
-                        </article>
+
+                    <!-- Interests -->
+                    <div>
+                        <h4 class="section-title">Intereses</h4>
+                        <div class="d-flex flex-wrap">
+                            <span class="interest-tag">Música</span>
+                            <span class="interest-tag">Viajar</span>
+                            <span class="interest-tag">Sci-fi</span>
+                            <span class="interest-tag">Natación</span>
+                            <span class="interest-tag">Películas</span>
+                            <span class="interest-tag">Videojuegos</span>
+                            <span class="interest-tag">Senderismo</span>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section> -->
-        <!-- <hr> -->
-        <div class="columns is-mobile is-centered">
-            <div class="field is-grouped is-grouped-multiline">
-                <div class="control">
-                    <div class="tags has-addons">
-                        <span class="tag is-link">2022</span>
-                        <span class="tag is-info">Angel Ordón</span>
-                    </div>
+
+            <!-- Main Content -->
+            <div class="col-lg-8 col-md-7">
+                <div class="main-content">
+                    <!-- Education -->
+                    <section class="mb-5">
+                        <h3 class="section-title">Educación</h3>
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="timeline-item">
+                                    <h5 class="fw-bold mb-1">Universidad de San Carlos de Guatemala</h5>
+                                    <p class="text-muted mb-2">Ingeniería en Ciencias y Sistemas</p>
+                                    <small class="text-secondary">
+                                        <i class="fas fa-calendar me-1"></i>2019 - Presente
+                                    </small>
+                                </div>
+                                <div class="timeline-item">
+                                    <h5 class="fw-bold mb-1">Fundación Kinal</h5>
+                                    <p class="text-muted mb-2">Perito en Computación, Informática</p>
+                                    <small class="text-secondary">
+                                        <i class="fas fa-calendar me-1"></i>2016 - 2018
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Experience -->
+                    <section class="mb-5">
+                        <h3 class="section-title">Experiencia Profesional</h3>
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <div class="timeline-item">
+                                    <h5 class="fw-bold mb-1">Desarrollador Frontend Junior</h5>
+                                    <p class="text-muted mb-2">Proyectos Académicos y Freelance</p>
+                                    <small class="text-secondary mb-3 d-block">
+                                        <i class="fas fa-calendar me-1"></i>2020 - Presente
+                                    </small>
+                                    <ul class="text-muted small">
+                                        <li>Desarrollo de aplicaciones web responsivas con HTML5, CSS3 y JavaScript</li>
+                                        <li>Implementación de interfaces usando frameworks como Angular y Bootstrap</li>
+                                        <li>Colaboración en proyectos usando control de versiones Git</li>
+                                        <li>Desarrollo de APIs RESTful con PHP/Laravel y Python/Flask</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="timeline-item">
+                                    <h5 class="fw-bold mb-1">Proyectos Académicos</h5>
+                                    <p class="text-muted mb-2">Universidad de San Carlos de Guatemala</p>
+                                    <small class="text-secondary mb-3 d-block">
+                                        <i class="fas fa-calendar me-1"></i>2019 - Presente
+                                    </small>
+                                    <ul class="text-muted small">
+                                        <li>Desarrollo de sistemas de gestión con bases de datos relacionales</li>
+                                        <li>Implementación de patrones de arquitectura MVC y MVVM</li>
+                                        <li>Análisis y diseño de sistemas de información</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Skills -->
+                    <section>
+                        <h3 class="section-title">Habilidades Técnicas</h3>
+                        
+                        <!-- Intermediate Skills -->
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h5 class="fw-bold text-success mb-3">
+                                    <i class="fas fa-circle text-success me-2" style="font-size: 0.8rem;"></i>
+                                    Nivel Intermedio
+                                </h5>
+                                <div class="d-flex flex-wrap">
+                                    <span class="skill-badge">JavaScript ES6+</span>
+                                    <span class="skill-badge">TypeScript</span>
+                                    <span class="skill-badge">HTML5</span>
+                                    <span class="skill-badge">CSS3</span>
+                                    <span class="skill-badge">Bootstrap 5</span>
+                                    <span class="skill-badge">Java</span>
+                                    <span class="skill-badge">Python</span>
+                                    <span class="skill-badge">PHP</span>
+                                    <span class="skill-badge">MySQL</span>
+                                    <span class="skill-badge">PostgreSQL</span>
+                                    <span class="skill-badge">Angular</span>
+                                    <span class="skill-badge">Laravel</span>
+                                    <span class="skill-badge">Flask</span>
+                                    <span class="skill-badge">REST APIs</span>
+                                    <span class="skill-badge">Git/GitHub</span>
+                                    <span class="skill-badge">Linux</span>
+                                    <span class="skill-badge">MVC</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Beginner Skills -->
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="fw-bold text-info mb-3">
+                                    <i class="fas fa-circle text-info me-2" style="font-size: 0.8rem;"></i>
+                                    Nivel Principiante
+                                </h5>
+                                <div class="d-flex flex-wrap">
+                                    <span class="skill-badge">React.js</span>
+                                    <span class="skill-badge">Vue.js</span>
+                                    <span class="skill-badge">Node.js</span>
+                                    <span class="skill-badge">Express.js</span>
+                                    <span class="skill-badge">MongoDB</span>
+                                    <span class="skill-badge">Docker</span>
+                                    <span class="skill-badge">Ionic</span>
+                                    <span class="skill-badge">ASP.NET</span>
+                                    <span class="skill-badge">WordPress</span>
+                                    <span class="skill-badge">MVVM</span>
+                                    <span class="skill-badge">GraphQL</span>
+                                    <span class="skill-badge">AWS Basics</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Certifications -->
+                    <section>
+                        <h3 class="section-title">Certificaciones y Cursos</h3>
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <div class="d-flex align-items-center">
+                                            <i class="fas fa-certificate text-warning me-3"></i>
+                                            <div>
+                                                <h6 class="fw-bold mb-1">Idioma Inglés Nivel 12</h6>
+                                                <small class="text-muted">Certificado CALUSAC - 2024</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <div class="d-flex align-items-center">
+                                            <i class="fas fa-certificate text-warning me-3"></i>
+                                            <div>
+                                                <h6 class="fw-bold mb-1">Git y GitHub</h6>
+                                                <small class="text-muted">Curso Online - 2019</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <div class="d-flex align-items-center">
+                                            <i class="fas fa-certificate text-warning me-3"></i>
+                                            <div>
+                                                <h6 class="fw-bold mb-1">Desarrollo Web Completo</h6>
+                                                <small class="text-muted">Fundación Kinal - 2018</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <div class="d-flex align-items-center">
+                                            <i class="fas fa-certificate text-warning me-3"></i>
+                                            <div>
+                                                <h6 class="fw-bold mb-1">Angular Framework</h6>
+                                                <small class="text-muted">Curso Online - 2018</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                 </div>
-                <!-- <div class="control">
-                    <div class="tags has-addons"><a class="tag is-link"
-                            href="https://github.com/BulmaTemplates/bulma-templates">Bulma Templates</a>
-                        <span class="tag is-info">MIT license</span>
-                    </div>
-                </div> -->
-                <!-- <div class="control">
-                    <div class="tags has-addons">
-                        <span class="tag is-dark">based on a pen</span>
-                        <span class="tag has-addons is-warning"><a
-                                href="https://codepen.io/melanieseltzer/pen/odOXWM"><i
-                                    class="fab fa-lg fa-codepen"></i></a></span>
-                    </div>
-                </div> -->
             </div>
         </div>
+    </div>
 
+    <!-- Footer -->
+    <footer class="bg-light py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <div class="d-flex justify-content-center align-items-center flex-wrap">
+                        <span class="badge bg-primary me-2 mb-2">2025</span>
+                        <span class="badge bg-secondary mb-2">Angel Geovanny Ordón Colchaj</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </footer>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.9.1/js/OverlayScrollbars.min.js'></script>
 
-    <script>
-        window.addEventListener('resize', () => {
-            const divs = document.querySelectorAll(".menu-list");
-            if (window.innerWidth < 768) {
-                divs.forEach(div => div.classList.add("tags"));
-            }
-            else {
-                divs.forEach(div => div.classList.remove("tags"));
-            }
-        });
-
-        document.addEventListener("DOMContentLoaded", function () {
-            //The first argument are the elements to which the plugin shall be initialized
-            //The second argument has to be at least a empty object or a object with your desired options
-            OverlayScrollbars(document.querySelectorAll("body"), {});
-        });
-
-    </script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" 
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" 
+            crossorigin="anonymous"></script>
 </body>
 
 </html>
